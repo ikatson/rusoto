@@ -8,8 +8,11 @@ use std::io;
 use std::iter::Peekable;
 use std::num::ParseIntError;
 use xml;
-use xml::reader::{EventReader, Events, ParserConfig, XmlEvent};
+use xml::reader::{XmlEvent};
 use xml::writer::EventWriter;
+
+use crate::proto::xml::quick_xml_adapter::QEvents;
+use quick_xml::Reader;
 
 use crate::{error::RusotoError, request::HttpResponse};
 
@@ -24,7 +27,7 @@ impl XmlParseError {
 }
 
 /// syntactic sugar for the XML event stack we pass around
-pub type XmlStack<'a> = Peekable<Events<&'a [u8]>>;
+pub type XmlStack<'a> = Peekable<QEvents<&'a [u8]>>;
 
 /// Peek at next items in the XML stack
 pub trait Peek {
@@ -38,11 +41,11 @@ pub trait Next {
 
 /// Wraps the Hyper Response type
 pub struct XmlResponse<'b> {
-    xml_stack: Peekable<Events<&'b [u8]>>, // refactor to use XmlStack type?
+    xml_stack: Peekable<QEvents<&'b [u8]>>, // refactor to use XmlStack type?
 }
 
 impl<'b> XmlResponse<'b> {
-    pub fn new(stack: Peekable<Events<&'b [u8]>>) -> XmlResponse {
+    pub fn new(stack: Peekable<QEvents<&'b [u8]>>) -> XmlResponse {
         XmlResponse { xml_stack: stack }
     }
 }
@@ -269,11 +272,8 @@ where
     if xml_response.body.is_empty() {
         Ok(T::default())
     } else {
-        let reader = EventReader::new_with_config(
-            xml_response.body.as_ref(),
-            ParserConfig::new().trim_whitespace(false),
-        );
-        let mut stack = XmlResponse::new(reader.into_iter().peekable());
+        let events = QEvents::from_reader(Reader::from_reader(xml_response.body.as_ref()));
+        let mut stack = XmlResponse::new(events.into_iter().peekable());
         let _start_document = stack.next();
         let actual_tag_name = peek_at_name(&mut stack)?;
         Ok(deserialize(&actual_tag_name, &mut stack)?)
@@ -291,8 +291,8 @@ mod tests {
         let mut file = File::open("test_resources/list_queues_with_queue.xml").unwrap();
         let mut body = String::new();
         let _size = file.read_to_string(&mut body);
-        let my_parser = EventReader::new(body.as_bytes());
-        let my_stack = my_parser.into_iter().peekable();
+        let events = QEvents::from_reader(Reader::from_reader(body.as_bytes()));
+        let my_stack = events.into_iter().peekable();
         let mut reader = XmlResponse::new(my_stack);
 
         loop {
@@ -313,8 +313,8 @@ mod tests {
         let mut file = File::open("test_resources/list_queues_with_queue.xml").unwrap();
         let mut body = String::new();
         let _size = file.read_to_string(&mut body);
-        let my_parser = EventReader::new(body.as_bytes());
-        let my_stack = my_parser.into_iter().peekable();
+        let events = QEvents::from_reader(Reader::from_reader(body.as_bytes()));
+        let my_stack = events.into_iter().peekable();
         let mut reader = XmlResponse::new(my_stack);
 
         // skip two leading fields since we ignore them (xml declaration, return type declaration)
@@ -332,8 +332,8 @@ mod tests {
         let mut file = File::open("test_resources/list_queues_with_queue.xml").unwrap();
         let mut body = String::new();
         let _size = file.read_to_string(&mut body);
-        let my_parser = EventReader::new(body.as_bytes());
-        let my_stack = my_parser.into_iter().peekable();
+        let events = QEvents::from_reader(Reader::from_reader(body.as_bytes()));
+        let my_stack = events.into_iter().peekable();
         let mut reader = XmlResponse::new(my_stack);
 
         // skip two leading fields since we ignore them (xml declaration, return type declaration)
@@ -355,8 +355,8 @@ mod tests {
         let mut file = File::open("test_resources/list_queues_with_queue.xml").unwrap();
         let mut body = String::new();
         let _size = file.read_to_string(&mut body);
-        let my_parser = EventReader::new(body.as_bytes());
-        let my_stack = my_parser.into_iter().peekable();
+        let events = QEvents::from_reader(Reader::from_reader(body.as_bytes()));
+        let my_stack = events.into_iter().peekable();
         let mut reader = XmlResponse::new(my_stack);
 
         // skip two leading fields since we ignore them (xml declaration, return type declaration)
@@ -379,7 +379,7 @@ mod tests {
     #[test]
     fn test_find_start_element() {
         let body = include_bytes!("../../../test_resources/list_queues_with_queue.xml");
-        let parser = EventReader::new(&body[..]);
+        let parser = QEvents::from_reader(Reader::from_reader(&body[..]));
         let stack = parser.into_iter().peekable();
         let mut reader = XmlResponse::new(stack);
 
