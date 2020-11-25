@@ -16,9 +16,9 @@ pub struct QEvents<R: BufRead> {
 }
 
 impl<R: BufRead> QEvents<R> {
-    pub fn from_reader(reader: Reader<R>) -> Self {
+    pub fn from_reader(reader: R) -> Self {
         Self {
-            reader,
+            reader: Reader::from_reader(reader),
             finished: false,
             end_element: None,
             buf: Vec::new(),
@@ -96,7 +96,12 @@ impl<R: BufRead> Iterator for QEvents<R> {
                                 return Some(Ok(start));
                             }
                             QEvent::Text(t) => {
-                                XE::Characters(from_utf8(t.escaped()).unwrap().into())
+                                let s: String = from_utf8(t.escaped()).unwrap().into();
+                                if s.is_empty() {
+                                    XE::Whitespace(s)
+                                } else {
+                                    XE::Characters(s)
+                                }
                             }
                             QEvent::Eof => {
                                 self.finished = true;

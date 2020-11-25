@@ -2149,8 +2149,7 @@ pub enum AddPermissionError {
 impl AddPermissionError {
     pub fn from_response(res: BufferedHttpResponse) -> RusotoError<AddPermissionError> {
         {
-            let reader = EventReader::new(res.body.as_ref());
-            let mut stack = XmlResponse::new(reader.into_iter().peekable());
+            let mut stack = XmlResponse::new(res.body.as_ref());
             find_start_element(&mut stack);
             if let Ok(parsed_error) = Self::deserialize(&mut stack) {
                 match &parsed_error.code[..] {
@@ -2195,8 +2194,7 @@ pub enum ChangeMessageVisibilityError {
 impl ChangeMessageVisibilityError {
     pub fn from_response(res: BufferedHttpResponse) -> RusotoError<ChangeMessageVisibilityError> {
         {
-            let reader = EventReader::new(res.body.as_ref());
-            let mut stack = XmlResponse::new(reader.into_iter().peekable());
+            let mut stack = XmlResponse::new(res.body.as_ref());
             find_start_element(&mut stack);
             if let Ok(parsed_error) = Self::deserialize(&mut stack) {
                 match &parsed_error.code[..] {
@@ -2257,8 +2255,7 @@ impl ChangeMessageVisibilityBatchError {
         res: BufferedHttpResponse,
     ) -> RusotoError<ChangeMessageVisibilityBatchError> {
         {
-            let reader = EventReader::new(res.body.as_ref());
-            let mut stack = XmlResponse::new(reader.into_iter().peekable());
+            let mut stack = XmlResponse::new(res.body.as_ref());
             find_start_element(&mut stack);
             if let Ok(parsed_error) = Self::deserialize(&mut stack) {
                 match &parsed_error.code[..] {
@@ -2337,8 +2334,7 @@ pub enum CreateQueueError {
 impl CreateQueueError {
     pub fn from_response(res: BufferedHttpResponse) -> RusotoError<CreateQueueError> {
         {
-            let reader = EventReader::new(res.body.as_ref());
-            let mut stack = XmlResponse::new(reader.into_iter().peekable());
+            let mut stack = XmlResponse::new(res.body.as_ref());
             find_start_element(&mut stack);
             if let Ok(parsed_error) = Self::deserialize(&mut stack) {
                 match &parsed_error.code[..] {
@@ -2389,8 +2385,7 @@ pub enum DeleteMessageError {
 impl DeleteMessageError {
     pub fn from_response(res: BufferedHttpResponse) -> RusotoError<DeleteMessageError> {
         {
-            let reader = EventReader::new(res.body.as_ref());
-            let mut stack = XmlResponse::new(reader.into_iter().peekable());
+            let mut stack = XmlResponse::new(res.body.as_ref());
             find_start_element(&mut stack);
             if let Ok(parsed_error) = Self::deserialize(&mut stack) {
                 match &parsed_error.code[..] {
@@ -2445,8 +2440,7 @@ pub enum DeleteMessageBatchError {
 impl DeleteMessageBatchError {
     pub fn from_response(res: BufferedHttpResponse) -> RusotoError<DeleteMessageBatchError> {
         {
-            let reader = EventReader::new(res.body.as_ref());
-            let mut stack = XmlResponse::new(reader.into_iter().peekable());
+            let mut stack = XmlResponse::new(res.body.as_ref());
             find_start_element(&mut stack);
             if let Ok(parsed_error) = Self::deserialize(&mut stack) {
                 match &parsed_error.code[..] {
@@ -2508,8 +2502,7 @@ pub enum DeleteQueueError {}
 impl DeleteQueueError {
     pub fn from_response(res: BufferedHttpResponse) -> RusotoError<DeleteQueueError> {
         {
-            let reader = EventReader::new(res.body.as_ref());
-            let mut stack = XmlResponse::new(reader.into_iter().peekable());
+            let mut stack = XmlResponse::new(res.body.as_ref());
             find_start_element(&mut stack);
             if let Ok(parsed_error) = Self::deserialize(&mut stack) {
                 match &parsed_error.code[..] {
@@ -2545,8 +2538,7 @@ pub enum GetQueueAttributesError {
 impl GetQueueAttributesError {
     pub fn from_response(res: BufferedHttpResponse) -> RusotoError<GetQueueAttributesError> {
         {
-            let reader = EventReader::new(res.body.as_ref());
-            let mut stack = XmlResponse::new(reader.into_iter().peekable());
+            let mut stack = XmlResponse::new(res.body.as_ref());
             find_start_element(&mut stack);
             if let Ok(parsed_error) = Self::deserialize(&mut stack) {
                 match &parsed_error.code[..] {
@@ -2589,8 +2581,7 @@ pub enum GetQueueUrlError {
 impl GetQueueUrlError {
     pub fn from_response(res: BufferedHttpResponse) -> RusotoError<GetQueueUrlError> {
         {
-            let reader = EventReader::new(res.body.as_ref());
-            let mut stack = XmlResponse::new(reader.into_iter().peekable());
+            let mut stack = XmlResponse::new(res.body.as_ref());
             find_start_element(&mut stack);
             if let Ok(parsed_error) = Self::deserialize(&mut stack) {
                 match &parsed_error.code[..] {
@@ -2635,8 +2626,7 @@ impl ListDeadLetterSourceQueuesError {
         res: BufferedHttpResponse,
     ) -> RusotoError<ListDeadLetterSourceQueuesError> {
         {
-            let reader = EventReader::new(res.body.as_ref());
-            let mut stack = XmlResponse::new(reader.into_iter().peekable());
+            let mut stack = XmlResponse::new(res.body.as_ref());
             find_start_element(&mut stack);
             if let Ok(parsed_error) = Self::deserialize(&mut stack) {
                 match &parsed_error.code[..] {
@@ -2678,8 +2668,7 @@ pub enum ListQueueTagsError {}
 impl ListQueueTagsError {
     pub fn from_response(res: BufferedHttpResponse) -> RusotoError<ListQueueTagsError> {
         {
-            let reader = EventReader::new(res.body.as_ref());
-            let mut stack = XmlResponse::new(reader.into_iter().peekable());
+            let mut stack = XmlResponse::new(res.body.as_ref());
             find_start_element(&mut stack);
             if let Ok(parsed_error) = Self::deserialize(&mut stack) {
                 match &parsed_error.code[..] {
@@ -2712,8 +2701,7 @@ pub enum ListQueuesError {}
 impl ListQueuesError {
     pub fn from_response(res: BufferedHttpResponse) -> RusotoError<ListQueuesError> {
         {
-            let reader = EventReader::new(res.body.as_ref());
-            let mut stack = XmlResponse::new(reader.into_iter().peekable());
+            let mut stack = XmlResponse::new(res.body.as_ref());
             find_start_element(&mut stack);
             if let Ok(parsed_error) = Self::deserialize(&mut stack) {
                 match &parsed_error.code[..] {
@@ -2751,8 +2739,7 @@ pub enum PurgeQueueError {
 impl PurgeQueueError {
     pub fn from_response(res: BufferedHttpResponse) -> RusotoError<PurgeQueueError> {
         {
-            let reader = EventReader::new(res.body.as_ref());
-            let mut stack = XmlResponse::new(reader.into_iter().peekable());
+            let mut stack = XmlResponse::new(res.body.as_ref());
             find_start_element(&mut stack);
             if let Ok(parsed_error) = Self::deserialize(&mut stack) {
                 match &parsed_error.code[..] {
@@ -2801,8 +2788,7 @@ pub enum ReceiveMessageError {
 impl ReceiveMessageError {
     pub fn from_response(res: BufferedHttpResponse) -> RusotoError<ReceiveMessageError> {
         {
-            let reader = EventReader::new(res.body.as_ref());
-            let mut stack = XmlResponse::new(reader.into_iter().peekable());
+            let mut stack = XmlResponse::new(res.body.as_ref());
             find_start_element(&mut stack);
             if let Ok(parsed_error) = Self::deserialize(&mut stack) {
                 match &parsed_error.code[..] {
@@ -2842,8 +2828,7 @@ pub enum RemovePermissionError {}
 impl RemovePermissionError {
     pub fn from_response(res: BufferedHttpResponse) -> RusotoError<RemovePermissionError> {
         {
-            let reader = EventReader::new(res.body.as_ref());
-            let mut stack = XmlResponse::new(reader.into_iter().peekable());
+            let mut stack = XmlResponse::new(res.body.as_ref());
             find_start_element(&mut stack);
             if let Ok(parsed_error) = Self::deserialize(&mut stack) {
                 match &parsed_error.code[..] {
@@ -2881,8 +2866,7 @@ pub enum SendMessageError {
 impl SendMessageError {
     pub fn from_response(res: BufferedHttpResponse) -> RusotoError<SendMessageError> {
         {
-            let reader = EventReader::new(res.body.as_ref());
-            let mut stack = XmlResponse::new(reader.into_iter().peekable());
+            let mut stack = XmlResponse::new(res.body.as_ref());
             find_start_element(&mut stack);
             if let Ok(parsed_error) = Self::deserialize(&mut stack) {
                 match &parsed_error.code[..] {
@@ -2941,8 +2925,7 @@ pub enum SendMessageBatchError {
 impl SendMessageBatchError {
     pub fn from_response(res: BufferedHttpResponse) -> RusotoError<SendMessageBatchError> {
         {
-            let reader = EventReader::new(res.body.as_ref());
-            let mut stack = XmlResponse::new(reader.into_iter().peekable());
+            let mut stack = XmlResponse::new(res.body.as_ref());
             find_start_element(&mut stack);
             if let Ok(parsed_error) = Self::deserialize(&mut stack) {
                 match &parsed_error.code[..] {
@@ -3019,8 +3002,7 @@ pub enum SetQueueAttributesError {
 impl SetQueueAttributesError {
     pub fn from_response(res: BufferedHttpResponse) -> RusotoError<SetQueueAttributesError> {
         {
-            let reader = EventReader::new(res.body.as_ref());
-            let mut stack = XmlResponse::new(reader.into_iter().peekable());
+            let mut stack = XmlResponse::new(res.body.as_ref());
             find_start_element(&mut stack);
             if let Ok(parsed_error) = Self::deserialize(&mut stack) {
                 match &parsed_error.code[..] {
@@ -3060,8 +3042,7 @@ pub enum TagQueueError {}
 impl TagQueueError {
     pub fn from_response(res: BufferedHttpResponse) -> RusotoError<TagQueueError> {
         {
-            let reader = EventReader::new(res.body.as_ref());
-            let mut stack = XmlResponse::new(reader.into_iter().peekable());
+            let mut stack = XmlResponse::new(res.body.as_ref());
             find_start_element(&mut stack);
             if let Ok(parsed_error) = Self::deserialize(&mut stack) {
                 match &parsed_error.code[..] {
@@ -3094,8 +3075,7 @@ pub enum UntagQueueError {}
 impl UntagQueueError {
     pub fn from_response(res: BufferedHttpResponse) -> RusotoError<UntagQueueError> {
         {
-            let reader = EventReader::new(res.body.as_ref());
-            let mut stack = XmlResponse::new(reader.into_iter().peekable());
+            let mut stack = XmlResponse::new(res.body.as_ref());
             find_start_element(&mut stack);
             if let Ok(parsed_error) = Self::deserialize(&mut stack) {
                 match &parsed_error.code[..] {

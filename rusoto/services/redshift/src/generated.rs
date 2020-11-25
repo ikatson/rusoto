@@ -11815,8 +11815,7 @@ impl AcceptReservedNodeExchangeError {
         res: BufferedHttpResponse,
     ) -> RusotoError<AcceptReservedNodeExchangeError> {
         {
-            let reader = EventReader::new(res.body.as_ref());
-            let mut stack = XmlResponse::new(reader.into_iter().peekable());
+            let mut stack = XmlResponse::new(res.body.as_ref());
             find_start_element(&mut stack);
             if let Ok(parsed_error) = Self::deserialize(&mut stack) {
                 match &parsed_error.code[..] {
@@ -11931,8 +11930,7 @@ impl AuthorizeClusterSecurityGroupIngressError {
         res: BufferedHttpResponse,
     ) -> RusotoError<AuthorizeClusterSecurityGroupIngressError> {
         {
-            let reader = EventReader::new(res.body.as_ref());
-            let mut stack = XmlResponse::new(reader.into_iter().peekable());
+            let mut stack = XmlResponse::new(res.body.as_ref());
             find_start_element(&mut stack);
             if let Ok(parsed_error) = Self::deserialize(&mut stack) {
                 match &parsed_error.code[..] {
@@ -11991,8 +11989,7 @@ pub enum AuthorizeSnapshotAccessError {
 impl AuthorizeSnapshotAccessError {
     pub fn from_response(res: BufferedHttpResponse) -> RusotoError<AuthorizeSnapshotAccessError> {
         {
-            let reader = EventReader::new(res.body.as_ref());
-            let mut stack = XmlResponse::new(reader.into_iter().peekable());
+            let mut stack = XmlResponse::new(res.body.as_ref());
             find_start_element(&mut stack);
             if let Ok(parsed_error) = Self::deserialize(&mut stack) {
                 match &parsed_error.code[..] {
@@ -12087,8 +12084,7 @@ impl BatchDeleteClusterSnapshotsError {
         res: BufferedHttpResponse,
     ) -> RusotoError<BatchDeleteClusterSnapshotsError> {
         {
-            let reader = EventReader::new(res.body.as_ref());
-            let mut stack = XmlResponse::new(reader.into_iter().peekable());
+            let mut stack = XmlResponse::new(res.body.as_ref());
             find_start_element(&mut stack);
             if let Ok(parsed_error) = Self::deserialize(&mut stack) {
                 match &parsed_error.code[..] {
@@ -12139,8 +12135,7 @@ impl BatchModifyClusterSnapshotsError {
         res: BufferedHttpResponse,
     ) -> RusotoError<BatchModifyClusterSnapshotsError> {
         {
-            let reader = EventReader::new(res.body.as_ref());
-            let mut stack = XmlResponse::new(reader.into_iter().peekable());
+            let mut stack = XmlResponse::new(res.body.as_ref());
             find_start_element(&mut stack);
             if let Ok(parsed_error) = Self::deserialize(&mut stack) {
                 match &parsed_error.code[..] {
@@ -12189,8 +12184,7 @@ pub enum CancelResizeError {
 impl CancelResizeError {
     pub fn from_response(res: BufferedHttpResponse) -> RusotoError<CancelResizeError> {
         {
-            let reader = EventReader::new(res.body.as_ref());
-            let mut stack = XmlResponse::new(reader.into_iter().peekable());
+            let mut stack = XmlResponse::new(res.body.as_ref());
             find_start_element(&mut stack);
             if let Ok(parsed_error) = Self::deserialize(&mut stack) {
                 match &parsed_error.code[..] {
@@ -12259,8 +12253,7 @@ pub enum CopyClusterSnapshotError {
 impl CopyClusterSnapshotError {
     pub fn from_response(res: BufferedHttpResponse) -> RusotoError<CopyClusterSnapshotError> {
         {
-            let reader = EventReader::new(res.body.as_ref());
-            let mut stack = XmlResponse::new(reader.into_iter().peekable());
+            let mut stack = XmlResponse::new(res.body.as_ref());
             find_start_element(&mut stack);
             if let Ok(parsed_error) = Self::deserialize(&mut stack) {
                 match &parsed_error.code[..] {
@@ -12389,8 +12382,7 @@ pub enum CreateClusterError {
 impl CreateClusterError {
     pub fn from_response(res: BufferedHttpResponse) -> RusotoError<CreateClusterError> {
         {
-            let reader = EventReader::new(res.body.as_ref());
-            let mut stack = XmlResponse::new(reader.into_iter().peekable());
+            let mut stack = XmlResponse::new(res.body.as_ref());
             find_start_element(&mut stack);
             if let Ok(parsed_error) = Self::deserialize(&mut stack) {
                 match &parsed_error.code[..] {
@@ -12603,8 +12595,7 @@ impl CreateClusterParameterGroupError {
         res: BufferedHttpResponse,
     ) -> RusotoError<CreateClusterParameterGroupError> {
         {
-            let reader = EventReader::new(res.body.as_ref());
-            let mut stack = XmlResponse::new(reader.into_iter().peekable());
+            let mut stack = XmlResponse::new(res.body.as_ref());
             find_start_element(&mut stack);
             if let Ok(parsed_error) = Self::deserialize(&mut stack) {
                 match &parsed_error.code[..] {
@@ -12681,8 +12672,7 @@ impl CreateClusterSecurityGroupError {
         res: BufferedHttpResponse,
     ) -> RusotoError<CreateClusterSecurityGroupError> {
         {
-            let reader = EventReader::new(res.body.as_ref());
-            let mut stack = XmlResponse::new(reader.into_iter().peekable());
+            let mut stack = XmlResponse::new(res.body.as_ref());
             find_start_element(&mut stack);
             if let Ok(parsed_error) = Self::deserialize(&mut stack) {
                 match &parsed_error.code[..] {
@@ -12767,8 +12757,7 @@ pub enum CreateClusterSnapshotError {
 impl CreateClusterSnapshotError {
     pub fn from_response(res: BufferedHttpResponse) -> RusotoError<CreateClusterSnapshotError> {
         {
-            let reader = EventReader::new(res.body.as_ref());
-            let mut stack = XmlResponse::new(reader.into_iter().peekable());
+            let mut stack = XmlResponse::new(res.body.as_ref());
             find_start_element(&mut stack);
             if let Ok(parsed_error) = Self::deserialize(&mut stack) {
                 match &parsed_error.code[..] {
@@ -12877,8 +12866,7 @@ pub enum CreateClusterSubnetGroupError {
 impl CreateClusterSubnetGroupError {
     pub fn from_response(res: BufferedHttpResponse) -> RusotoError<CreateClusterSubnetGroupError> {
         {
-            let reader = EventReader::new(res.body.as_ref());
-            let mut stack = XmlResponse::new(reader.into_iter().peekable());
+            let mut stack = XmlResponse::new(res.body.as_ref());
             find_start_element(&mut stack);
             if let Ok(parsed_error) = Self::deserialize(&mut stack) {
                 match &parsed_error.code[..] {
@@ -13007,8 +12995,7 @@ pub enum CreateEventSubscriptionError {
 impl CreateEventSubscriptionError {
     pub fn from_response(res: BufferedHttpResponse) -> RusotoError<CreateEventSubscriptionError> {
         {
-            let reader = EventReader::new(res.body.as_ref());
-            let mut stack = XmlResponse::new(reader.into_iter().peekable());
+            let mut stack = XmlResponse::new(res.body.as_ref());
             find_start_element(&mut stack);
             if let Ok(parsed_error) = Self::deserialize(&mut stack) {
                 match &parsed_error.code[..] {
@@ -13153,8 +13140,7 @@ impl CreateHsmClientCertificateError {
         res: BufferedHttpResponse,
     ) -> RusotoError<CreateHsmClientCertificateError> {
         {
-            let reader = EventReader::new(res.body.as_ref());
-            let mut stack = XmlResponse::new(reader.into_iter().peekable());
+            let mut stack = XmlResponse::new(res.body.as_ref());
             find_start_element(&mut stack);
             if let Ok(parsed_error) = Self::deserialize(&mut stack) {
                 match &parsed_error.code[..] {
@@ -13233,8 +13219,7 @@ pub enum CreateHsmConfigurationError {
 impl CreateHsmConfigurationError {
     pub fn from_response(res: BufferedHttpResponse) -> RusotoError<CreateHsmConfigurationError> {
         {
-            let reader = EventReader::new(res.body.as_ref());
-            let mut stack = XmlResponse::new(reader.into_iter().peekable());
+            let mut stack = XmlResponse::new(res.body.as_ref());
             find_start_element(&mut stack);
             if let Ok(parsed_error) = Self::deserialize(&mut stack) {
                 match &parsed_error.code[..] {
@@ -13315,8 +13300,7 @@ pub enum CreateScheduledActionError {
 impl CreateScheduledActionError {
     pub fn from_response(res: BufferedHttpResponse) -> RusotoError<CreateScheduledActionError> {
         {
-            let reader = EventReader::new(res.body.as_ref());
-            let mut stack = XmlResponse::new(reader.into_iter().peekable());
+            let mut stack = XmlResponse::new(res.body.as_ref());
             find_start_element(&mut stack);
             if let Ok(parsed_error) = Self::deserialize(&mut stack) {
                 match &parsed_error.code[..] {
@@ -13415,8 +13399,7 @@ pub enum CreateSnapshotCopyGrantError {
 impl CreateSnapshotCopyGrantError {
     pub fn from_response(res: BufferedHttpResponse) -> RusotoError<CreateSnapshotCopyGrantError> {
         {
-            let reader = EventReader::new(res.body.as_ref());
-            let mut stack = XmlResponse::new(reader.into_iter().peekable());
+            let mut stack = XmlResponse::new(res.body.as_ref());
             find_start_element(&mut stack);
             if let Ok(parsed_error) = Self::deserialize(&mut stack) {
                 match &parsed_error.code[..] {
@@ -13513,8 +13496,7 @@ pub enum CreateSnapshotScheduleError {
 impl CreateSnapshotScheduleError {
     pub fn from_response(res: BufferedHttpResponse) -> RusotoError<CreateSnapshotScheduleError> {
         {
-            let reader = EventReader::new(res.body.as_ref());
-            let mut stack = XmlResponse::new(reader.into_iter().peekable());
+            let mut stack = XmlResponse::new(res.body.as_ref());
             find_start_element(&mut stack);
             if let Ok(parsed_error) = Self::deserialize(&mut stack) {
                 match &parsed_error.code[..] {
@@ -13599,8 +13581,7 @@ pub enum CreateTagsError {
 impl CreateTagsError {
     pub fn from_response(res: BufferedHttpResponse) -> RusotoError<CreateTagsError> {
         {
-            let reader = EventReader::new(res.body.as_ref());
-            let mut stack = XmlResponse::new(reader.into_iter().peekable());
+            let mut stack = XmlResponse::new(res.body.as_ref());
             find_start_element(&mut stack);
             if let Ok(parsed_error) = Self::deserialize(&mut stack) {
                 match &parsed_error.code[..] {
@@ -13667,8 +13648,7 @@ pub enum CreateUsageLimitError {
 impl CreateUsageLimitError {
     pub fn from_response(res: BufferedHttpResponse) -> RusotoError<CreateUsageLimitError> {
         {
-            let reader = EventReader::new(res.body.as_ref());
-            let mut stack = XmlResponse::new(reader.into_iter().peekable());
+            let mut stack = XmlResponse::new(res.body.as_ref());
             find_start_element(&mut stack);
             if let Ok(parsed_error) = Self::deserialize(&mut stack) {
                 match &parsed_error.code[..] {
@@ -13759,8 +13739,7 @@ pub enum DeleteClusterError {
 impl DeleteClusterError {
     pub fn from_response(res: BufferedHttpResponse) -> RusotoError<DeleteClusterError> {
         {
-            let reader = EventReader::new(res.body.as_ref());
-            let mut stack = XmlResponse::new(reader.into_iter().peekable());
+            let mut stack = XmlResponse::new(res.body.as_ref());
             find_start_element(&mut stack);
             if let Ok(parsed_error) = Self::deserialize(&mut stack) {
                 match &parsed_error.code[..] {
@@ -13839,8 +13818,7 @@ impl DeleteClusterParameterGroupError {
         res: BufferedHttpResponse,
     ) -> RusotoError<DeleteClusterParameterGroupError> {
         {
-            let reader = EventReader::new(res.body.as_ref());
-            let mut stack = XmlResponse::new(reader.into_iter().peekable());
+            let mut stack = XmlResponse::new(res.body.as_ref());
             find_start_element(&mut stack);
             if let Ok(parsed_error) = Self::deserialize(&mut stack) {
                 match &parsed_error.code[..] {
@@ -13899,8 +13877,7 @@ impl DeleteClusterSecurityGroupError {
         res: BufferedHttpResponse,
     ) -> RusotoError<DeleteClusterSecurityGroupError> {
         {
-            let reader = EventReader::new(res.body.as_ref());
-            let mut stack = XmlResponse::new(reader.into_iter().peekable());
+            let mut stack = XmlResponse::new(res.body.as_ref());
             find_start_element(&mut stack);
             if let Ok(parsed_error) = Self::deserialize(&mut stack) {
                 match &parsed_error.code[..] {
@@ -13959,8 +13936,7 @@ pub enum DeleteClusterSnapshotError {
 impl DeleteClusterSnapshotError {
     pub fn from_response(res: BufferedHttpResponse) -> RusotoError<DeleteClusterSnapshotError> {
         {
-            let reader = EventReader::new(res.body.as_ref());
-            let mut stack = XmlResponse::new(reader.into_iter().peekable());
+            let mut stack = XmlResponse::new(res.body.as_ref());
             find_start_element(&mut stack);
             if let Ok(parsed_error) = Self::deserialize(&mut stack) {
                 match &parsed_error.code[..] {
@@ -14021,8 +13997,7 @@ pub enum DeleteClusterSubnetGroupError {
 impl DeleteClusterSubnetGroupError {
     pub fn from_response(res: BufferedHttpResponse) -> RusotoError<DeleteClusterSubnetGroupError> {
         {
-            let reader = EventReader::new(res.body.as_ref());
-            let mut stack = XmlResponse::new(reader.into_iter().peekable());
+            let mut stack = XmlResponse::new(res.body.as_ref());
             find_start_element(&mut stack);
             if let Ok(parsed_error) = Self::deserialize(&mut stack) {
                 match &parsed_error.code[..] {
@@ -14091,8 +14066,7 @@ pub enum DeleteEventSubscriptionError {
 impl DeleteEventSubscriptionError {
     pub fn from_response(res: BufferedHttpResponse) -> RusotoError<DeleteEventSubscriptionError> {
         {
-            let reader = EventReader::new(res.body.as_ref());
-            let mut stack = XmlResponse::new(reader.into_iter().peekable());
+            let mut stack = XmlResponse::new(res.body.as_ref());
             find_start_element(&mut stack);
             if let Ok(parsed_error) = Self::deserialize(&mut stack) {
                 match &parsed_error.code[..] {
@@ -14153,8 +14127,7 @@ impl DeleteHsmClientCertificateError {
         res: BufferedHttpResponse,
     ) -> RusotoError<DeleteHsmClientCertificateError> {
         {
-            let reader = EventReader::new(res.body.as_ref());
-            let mut stack = XmlResponse::new(reader.into_iter().peekable());
+            let mut stack = XmlResponse::new(res.body.as_ref());
             find_start_element(&mut stack);
             if let Ok(parsed_error) = Self::deserialize(&mut stack) {
                 match &parsed_error.code[..] {
@@ -14213,8 +14186,7 @@ pub enum DeleteHsmConfigurationError {
 impl DeleteHsmConfigurationError {
     pub fn from_response(res: BufferedHttpResponse) -> RusotoError<DeleteHsmConfigurationError> {
         {
-            let reader = EventReader::new(res.body.as_ref());
-            let mut stack = XmlResponse::new(reader.into_iter().peekable());
+            let mut stack = XmlResponse::new(res.body.as_ref());
             find_start_element(&mut stack);
             if let Ok(parsed_error) = Self::deserialize(&mut stack) {
                 match &parsed_error.code[..] {
@@ -14273,8 +14245,7 @@ pub enum DeleteScheduledActionError {
 impl DeleteScheduledActionError {
     pub fn from_response(res: BufferedHttpResponse) -> RusotoError<DeleteScheduledActionError> {
         {
-            let reader = EventReader::new(res.body.as_ref());
-            let mut stack = XmlResponse::new(reader.into_iter().peekable());
+            let mut stack = XmlResponse::new(res.body.as_ref());
             find_start_element(&mut stack);
             if let Ok(parsed_error) = Self::deserialize(&mut stack) {
                 match &parsed_error.code[..] {
@@ -14329,8 +14300,7 @@ pub enum DeleteSnapshotCopyGrantError {
 impl DeleteSnapshotCopyGrantError {
     pub fn from_response(res: BufferedHttpResponse) -> RusotoError<DeleteSnapshotCopyGrantError> {
         {
-            let reader = EventReader::new(res.body.as_ref());
-            let mut stack = XmlResponse::new(reader.into_iter().peekable());
+            let mut stack = XmlResponse::new(res.body.as_ref());
             find_start_element(&mut stack);
             if let Ok(parsed_error) = Self::deserialize(&mut stack) {
                 match &parsed_error.code[..] {
@@ -14389,8 +14359,7 @@ pub enum DeleteSnapshotScheduleError {
 impl DeleteSnapshotScheduleError {
     pub fn from_response(res: BufferedHttpResponse) -> RusotoError<DeleteSnapshotScheduleError> {
         {
-            let reader = EventReader::new(res.body.as_ref());
-            let mut stack = XmlResponse::new(reader.into_iter().peekable());
+            let mut stack = XmlResponse::new(res.body.as_ref());
             find_start_element(&mut stack);
             if let Ok(parsed_error) = Self::deserialize(&mut stack) {
                 match &parsed_error.code[..] {
@@ -14449,8 +14418,7 @@ pub enum DeleteTagsError {
 impl DeleteTagsError {
     pub fn from_response(res: BufferedHttpResponse) -> RusotoError<DeleteTagsError> {
         {
-            let reader = EventReader::new(res.body.as_ref());
-            let mut stack = XmlResponse::new(reader.into_iter().peekable());
+            let mut stack = XmlResponse::new(res.body.as_ref());
             find_start_element(&mut stack);
             if let Ok(parsed_error) = Self::deserialize(&mut stack) {
                 match &parsed_error.code[..] {
@@ -14501,8 +14469,7 @@ pub enum DeleteUsageLimitError {
 impl DeleteUsageLimitError {
     pub fn from_response(res: BufferedHttpResponse) -> RusotoError<DeleteUsageLimitError> {
         {
-            let reader = EventReader::new(res.body.as_ref());
-            let mut stack = XmlResponse::new(reader.into_iter().peekable());
+            let mut stack = XmlResponse::new(res.body.as_ref());
             find_start_element(&mut stack);
             if let Ok(parsed_error) = Self::deserialize(&mut stack) {
                 match &parsed_error.code[..] {
@@ -14548,8 +14515,7 @@ pub enum DescribeAccountAttributesError {}
 impl DescribeAccountAttributesError {
     pub fn from_response(res: BufferedHttpResponse) -> RusotoError<DescribeAccountAttributesError> {
         {
-            let reader = EventReader::new(res.body.as_ref());
-            let mut stack = XmlResponse::new(reader.into_iter().peekable());
+            let mut stack = XmlResponse::new(res.body.as_ref());
             find_start_element(&mut stack);
             if let Ok(parsed_error) = Self::deserialize(&mut stack) {
                 match &parsed_error.code[..] {
@@ -14589,8 +14555,7 @@ impl DescribeClusterDbRevisionsError {
         res: BufferedHttpResponse,
     ) -> RusotoError<DescribeClusterDbRevisionsError> {
         {
-            let reader = EventReader::new(res.body.as_ref());
-            let mut stack = XmlResponse::new(reader.into_iter().peekable());
+            let mut stack = XmlResponse::new(res.body.as_ref());
             find_start_element(&mut stack);
             if let Ok(parsed_error) = Self::deserialize(&mut stack) {
                 match &parsed_error.code[..] {
@@ -14651,8 +14616,7 @@ impl DescribeClusterParameterGroupsError {
         res: BufferedHttpResponse,
     ) -> RusotoError<DescribeClusterParameterGroupsError> {
         {
-            let reader = EventReader::new(res.body.as_ref());
-            let mut stack = XmlResponse::new(reader.into_iter().peekable());
+            let mut stack = XmlResponse::new(res.body.as_ref());
             find_start_element(&mut stack);
             if let Ok(parsed_error) = Self::deserialize(&mut stack) {
                 match &parsed_error.code[..] {
@@ -14709,8 +14673,7 @@ pub enum DescribeClusterParametersError {
 impl DescribeClusterParametersError {
     pub fn from_response(res: BufferedHttpResponse) -> RusotoError<DescribeClusterParametersError> {
         {
-            let reader = EventReader::new(res.body.as_ref());
-            let mut stack = XmlResponse::new(reader.into_iter().peekable());
+            let mut stack = XmlResponse::new(res.body.as_ref());
             find_start_element(&mut stack);
             if let Ok(parsed_error) = Self::deserialize(&mut stack) {
                 match &parsed_error.code[..] {
@@ -14761,8 +14724,7 @@ impl DescribeClusterSecurityGroupsError {
         res: BufferedHttpResponse,
     ) -> RusotoError<DescribeClusterSecurityGroupsError> {
         {
-            let reader = EventReader::new(res.body.as_ref());
-            let mut stack = XmlResponse::new(reader.into_iter().peekable());
+            let mut stack = XmlResponse::new(res.body.as_ref());
             find_start_element(&mut stack);
             if let Ok(parsed_error) = Self::deserialize(&mut stack) {
                 match &parsed_error.code[..] {
@@ -14823,8 +14785,7 @@ pub enum DescribeClusterSnapshotsError {
 impl DescribeClusterSnapshotsError {
     pub fn from_response(res: BufferedHttpResponse) -> RusotoError<DescribeClusterSnapshotsError> {
         {
-            let reader = EventReader::new(res.body.as_ref());
-            let mut stack = XmlResponse::new(reader.into_iter().peekable());
+            let mut stack = XmlResponse::new(res.body.as_ref());
             find_start_element(&mut stack);
             if let Ok(parsed_error) = Self::deserialize(&mut stack) {
                 match &parsed_error.code[..] {
@@ -14891,8 +14852,7 @@ impl DescribeClusterSubnetGroupsError {
         res: BufferedHttpResponse,
     ) -> RusotoError<DescribeClusterSubnetGroupsError> {
         {
-            let reader = EventReader::new(res.body.as_ref());
-            let mut stack = XmlResponse::new(reader.into_iter().peekable());
+            let mut stack = XmlResponse::new(res.body.as_ref());
             find_start_element(&mut stack);
             if let Ok(parsed_error) = Self::deserialize(&mut stack) {
                 match &parsed_error.code[..] {
@@ -14947,8 +14907,7 @@ pub enum DescribeClusterTracksError {
 impl DescribeClusterTracksError {
     pub fn from_response(res: BufferedHttpResponse) -> RusotoError<DescribeClusterTracksError> {
         {
-            let reader = EventReader::new(res.body.as_ref());
-            let mut stack = XmlResponse::new(reader.into_iter().peekable());
+            let mut stack = XmlResponse::new(res.body.as_ref());
             find_start_element(&mut stack);
             if let Ok(parsed_error) = Self::deserialize(&mut stack) {
                 match &parsed_error.code[..] {
@@ -14998,8 +14957,7 @@ pub enum DescribeClusterVersionsError {}
 impl DescribeClusterVersionsError {
     pub fn from_response(res: BufferedHttpResponse) -> RusotoError<DescribeClusterVersionsError> {
         {
-            let reader = EventReader::new(res.body.as_ref());
-            let mut stack = XmlResponse::new(reader.into_iter().peekable());
+            let mut stack = XmlResponse::new(res.body.as_ref());
             find_start_element(&mut stack);
             if let Ok(parsed_error) = Self::deserialize(&mut stack) {
                 match &parsed_error.code[..] {
@@ -15037,8 +14995,7 @@ pub enum DescribeClustersError {
 impl DescribeClustersError {
     pub fn from_response(res: BufferedHttpResponse) -> RusotoError<DescribeClustersError> {
         {
-            let reader = EventReader::new(res.body.as_ref());
-            let mut stack = XmlResponse::new(reader.into_iter().peekable());
+            let mut stack = XmlResponse::new(res.body.as_ref());
             find_start_element(&mut stack);
             if let Ok(parsed_error) = Self::deserialize(&mut stack) {
                 match &parsed_error.code[..] {
@@ -15086,8 +15043,7 @@ impl DescribeDefaultClusterParametersError {
         res: BufferedHttpResponse,
     ) -> RusotoError<DescribeDefaultClusterParametersError> {
         {
-            let reader = EventReader::new(res.body.as_ref());
-            let mut stack = XmlResponse::new(reader.into_iter().peekable());
+            let mut stack = XmlResponse::new(res.body.as_ref());
             find_start_element(&mut stack);
             if let Ok(parsed_error) = Self::deserialize(&mut stack) {
                 match &parsed_error.code[..] {
@@ -15120,8 +15076,7 @@ pub enum DescribeEventCategoriesError {}
 impl DescribeEventCategoriesError {
     pub fn from_response(res: BufferedHttpResponse) -> RusotoError<DescribeEventCategoriesError> {
         {
-            let reader = EventReader::new(res.body.as_ref());
-            let mut stack = XmlResponse::new(reader.into_iter().peekable());
+            let mut stack = XmlResponse::new(res.body.as_ref());
             find_start_element(&mut stack);
             if let Ok(parsed_error) = Self::deserialize(&mut stack) {
                 match &parsed_error.code[..] {
@@ -15161,8 +15116,7 @@ impl DescribeEventSubscriptionsError {
         res: BufferedHttpResponse,
     ) -> RusotoError<DescribeEventSubscriptionsError> {
         {
-            let reader = EventReader::new(res.body.as_ref());
-            let mut stack = XmlResponse::new(reader.into_iter().peekable());
+            let mut stack = XmlResponse::new(res.body.as_ref());
             find_start_element(&mut stack);
             if let Ok(parsed_error) = Self::deserialize(&mut stack) {
                 match &parsed_error.code[..] {
@@ -15212,8 +15166,7 @@ pub enum DescribeEventsError {}
 impl DescribeEventsError {
     pub fn from_response(res: BufferedHttpResponse) -> RusotoError<DescribeEventsError> {
         {
-            let reader = EventReader::new(res.body.as_ref());
-            let mut stack = XmlResponse::new(reader.into_iter().peekable());
+            let mut stack = XmlResponse::new(res.body.as_ref());
             find_start_element(&mut stack);
             if let Ok(parsed_error) = Self::deserialize(&mut stack) {
                 match &parsed_error.code[..] {
@@ -15253,8 +15206,7 @@ impl DescribeHsmClientCertificatesError {
         res: BufferedHttpResponse,
     ) -> RusotoError<DescribeHsmClientCertificatesError> {
         {
-            let reader = EventReader::new(res.body.as_ref());
-            let mut stack = XmlResponse::new(reader.into_iter().peekable());
+            let mut stack = XmlResponse::new(res.body.as_ref());
             find_start_element(&mut stack);
             if let Ok(parsed_error) = Self::deserialize(&mut stack) {
                 match &parsed_error.code[..] {
@@ -15313,8 +15265,7 @@ pub enum DescribeHsmConfigurationsError {
 impl DescribeHsmConfigurationsError {
     pub fn from_response(res: BufferedHttpResponse) -> RusotoError<DescribeHsmConfigurationsError> {
         {
-            let reader = EventReader::new(res.body.as_ref());
-            let mut stack = XmlResponse::new(reader.into_iter().peekable());
+            let mut stack = XmlResponse::new(res.body.as_ref());
             find_start_element(&mut stack);
             if let Ok(parsed_error) = Self::deserialize(&mut stack) {
                 match &parsed_error.code[..] {
@@ -15367,8 +15318,7 @@ pub enum DescribeLoggingStatusError {
 impl DescribeLoggingStatusError {
     pub fn from_response(res: BufferedHttpResponse) -> RusotoError<DescribeLoggingStatusError> {
         {
-            let reader = EventReader::new(res.body.as_ref());
-            let mut stack = XmlResponse::new(reader.into_iter().peekable());
+            let mut stack = XmlResponse::new(res.body.as_ref());
             find_start_element(&mut stack);
             if let Ok(parsed_error) = Self::deserialize(&mut stack) {
                 match &parsed_error.code[..] {
@@ -15419,8 +15369,7 @@ impl DescribeNodeConfigurationOptionsError {
         res: BufferedHttpResponse,
     ) -> RusotoError<DescribeNodeConfigurationOptionsError> {
         {
-            let reader = EventReader::new(res.body.as_ref());
-            let mut stack = XmlResponse::new(reader.into_iter().peekable());
+            let mut stack = XmlResponse::new(res.body.as_ref());
             find_start_element(&mut stack);
             if let Ok(parsed_error) = Self::deserialize(&mut stack) {
                 match &parsed_error.code[..] {
@@ -15496,8 +15445,7 @@ impl DescribeOrderableClusterOptionsError {
         res: BufferedHttpResponse,
     ) -> RusotoError<DescribeOrderableClusterOptionsError> {
         {
-            let reader = EventReader::new(res.body.as_ref());
-            let mut stack = XmlResponse::new(reader.into_iter().peekable());
+            let mut stack = XmlResponse::new(res.body.as_ref());
             find_start_element(&mut stack);
             if let Ok(parsed_error) = Self::deserialize(&mut stack) {
                 match &parsed_error.code[..] {
@@ -15539,8 +15487,7 @@ impl DescribeReservedNodeOfferingsError {
         res: BufferedHttpResponse,
     ) -> RusotoError<DescribeReservedNodeOfferingsError> {
         {
-            let reader = EventReader::new(res.body.as_ref());
-            let mut stack = XmlResponse::new(reader.into_iter().peekable());
+            let mut stack = XmlResponse::new(res.body.as_ref());
             find_start_element(&mut stack);
             if let Ok(parsed_error) = Self::deserialize(&mut stack) {
                 match &parsed_error.code[..] {
@@ -15609,8 +15556,7 @@ pub enum DescribeReservedNodesError {
 impl DescribeReservedNodesError {
     pub fn from_response(res: BufferedHttpResponse) -> RusotoError<DescribeReservedNodesError> {
         {
-            let reader = EventReader::new(res.body.as_ref());
-            let mut stack = XmlResponse::new(reader.into_iter().peekable());
+            let mut stack = XmlResponse::new(res.body.as_ref());
             find_start_element(&mut stack);
             if let Ok(parsed_error) = Self::deserialize(&mut stack) {
                 match &parsed_error.code[..] {
@@ -15669,8 +15615,7 @@ pub enum DescribeResizeError {
 impl DescribeResizeError {
     pub fn from_response(res: BufferedHttpResponse) -> RusotoError<DescribeResizeError> {
         {
-            let reader = EventReader::new(res.body.as_ref());
-            let mut stack = XmlResponse::new(reader.into_iter().peekable());
+            let mut stack = XmlResponse::new(res.body.as_ref());
             find_start_element(&mut stack);
             if let Ok(parsed_error) = Self::deserialize(&mut stack) {
                 match &parsed_error.code[..] {
@@ -15721,8 +15666,7 @@ pub enum DescribeScheduledActionsError {
 impl DescribeScheduledActionsError {
     pub fn from_response(res: BufferedHttpResponse) -> RusotoError<DescribeScheduledActionsError> {
         {
-            let reader = EventReader::new(res.body.as_ref());
-            let mut stack = XmlResponse::new(reader.into_iter().peekable());
+            let mut stack = XmlResponse::new(res.body.as_ref());
             find_start_element(&mut stack);
             if let Ok(parsed_error) = Self::deserialize(&mut stack) {
                 match &parsed_error.code[..] {
@@ -15783,8 +15727,7 @@ impl DescribeSnapshotCopyGrantsError {
         res: BufferedHttpResponse,
     ) -> RusotoError<DescribeSnapshotCopyGrantsError> {
         {
-            let reader = EventReader::new(res.body.as_ref());
-            let mut stack = XmlResponse::new(reader.into_iter().peekable());
+            let mut stack = XmlResponse::new(res.body.as_ref());
             find_start_element(&mut stack);
             if let Ok(parsed_error) = Self::deserialize(&mut stack) {
                 match &parsed_error.code[..] {
@@ -15834,8 +15777,7 @@ pub enum DescribeSnapshotSchedulesError {}
 impl DescribeSnapshotSchedulesError {
     pub fn from_response(res: BufferedHttpResponse) -> RusotoError<DescribeSnapshotSchedulesError> {
         {
-            let reader = EventReader::new(res.body.as_ref());
-            let mut stack = XmlResponse::new(reader.into_iter().peekable());
+            let mut stack = XmlResponse::new(res.body.as_ref());
             find_start_element(&mut stack);
             if let Ok(parsed_error) = Self::deserialize(&mut stack) {
                 match &parsed_error.code[..] {
@@ -15868,8 +15810,7 @@ pub enum DescribeStorageError {}
 impl DescribeStorageError {
     pub fn from_response(res: BufferedHttpResponse) -> RusotoError<DescribeStorageError> {
         {
-            let reader = EventReader::new(res.body.as_ref());
-            let mut stack = XmlResponse::new(reader.into_iter().peekable());
+            let mut stack = XmlResponse::new(res.body.as_ref());
             find_start_element(&mut stack);
             if let Ok(parsed_error) = Self::deserialize(&mut stack) {
                 match &parsed_error.code[..] {
@@ -15909,8 +15850,7 @@ impl DescribeTableRestoreStatusError {
         res: BufferedHttpResponse,
     ) -> RusotoError<DescribeTableRestoreStatusError> {
         {
-            let reader = EventReader::new(res.body.as_ref());
-            let mut stack = XmlResponse::new(reader.into_iter().peekable());
+            let mut stack = XmlResponse::new(res.body.as_ref());
             find_start_element(&mut stack);
             if let Ok(parsed_error) = Self::deserialize(&mut stack) {
                 match &parsed_error.code[..] {
@@ -15969,8 +15909,7 @@ pub enum DescribeTagsError {
 impl DescribeTagsError {
     pub fn from_response(res: BufferedHttpResponse) -> RusotoError<DescribeTagsError> {
         {
-            let reader = EventReader::new(res.body.as_ref());
-            let mut stack = XmlResponse::new(reader.into_iter().peekable());
+            let mut stack = XmlResponse::new(res.body.as_ref());
             find_start_element(&mut stack);
             if let Ok(parsed_error) = Self::deserialize(&mut stack) {
                 match &parsed_error.code[..] {
@@ -16021,8 +15960,7 @@ pub enum DescribeUsageLimitsError {
 impl DescribeUsageLimitsError {
     pub fn from_response(res: BufferedHttpResponse) -> RusotoError<DescribeUsageLimitsError> {
         {
-            let reader = EventReader::new(res.body.as_ref());
-            let mut stack = XmlResponse::new(reader.into_iter().peekable());
+            let mut stack = XmlResponse::new(res.body.as_ref());
             find_start_element(&mut stack);
             if let Ok(parsed_error) = Self::deserialize(&mut stack) {
                 match &parsed_error.code[..] {
@@ -16075,8 +16013,7 @@ pub enum DisableLoggingError {
 impl DisableLoggingError {
     pub fn from_response(res: BufferedHttpResponse) -> RusotoError<DisableLoggingError> {
         {
-            let reader = EventReader::new(res.body.as_ref());
-            let mut stack = XmlResponse::new(reader.into_iter().peekable());
+            let mut stack = XmlResponse::new(res.body.as_ref());
             find_start_element(&mut stack);
             if let Ok(parsed_error) = Self::deserialize(&mut stack) {
                 match &parsed_error.code[..] {
@@ -16125,8 +16062,7 @@ pub enum DisableSnapshotCopyError {
 impl DisableSnapshotCopyError {
     pub fn from_response(res: BufferedHttpResponse) -> RusotoError<DisableSnapshotCopyError> {
         {
-            let reader = EventReader::new(res.body.as_ref());
-            let mut stack = XmlResponse::new(reader.into_iter().peekable());
+            let mut stack = XmlResponse::new(res.body.as_ref());
             find_start_element(&mut stack);
             if let Ok(parsed_error) = Self::deserialize(&mut stack) {
                 match &parsed_error.code[..] {
@@ -16203,8 +16139,7 @@ pub enum EnableLoggingError {
 impl EnableLoggingError {
     pub fn from_response(res: BufferedHttpResponse) -> RusotoError<EnableLoggingError> {
         {
-            let reader = EventReader::new(res.body.as_ref());
-            let mut stack = XmlResponse::new(reader.into_iter().peekable());
+            let mut stack = XmlResponse::new(res.body.as_ref());
             find_start_element(&mut stack);
             if let Ok(parsed_error) = Self::deserialize(&mut stack) {
                 match &parsed_error.code[..] {
@@ -16301,8 +16236,7 @@ pub enum EnableSnapshotCopyError {
 impl EnableSnapshotCopyError {
     pub fn from_response(res: BufferedHttpResponse) -> RusotoError<EnableSnapshotCopyError> {
         {
-            let reader = EventReader::new(res.body.as_ref());
-            let mut stack = XmlResponse::new(reader.into_iter().peekable());
+            let mut stack = XmlResponse::new(res.body.as_ref());
             find_start_element(&mut stack);
             if let Ok(parsed_error) = Self::deserialize(&mut stack) {
                 match &parsed_error.code[..] {
@@ -16433,8 +16367,7 @@ pub enum GetClusterCredentialsError {
 impl GetClusterCredentialsError {
     pub fn from_response(res: BufferedHttpResponse) -> RusotoError<GetClusterCredentialsError> {
         {
-            let reader = EventReader::new(res.body.as_ref());
-            let mut stack = XmlResponse::new(reader.into_iter().peekable());
+            let mut stack = XmlResponse::new(res.body.as_ref());
             find_start_element(&mut stack);
             if let Ok(parsed_error) = Self::deserialize(&mut stack) {
                 match &parsed_error.code[..] {
@@ -16499,8 +16432,7 @@ impl GetReservedNodeExchangeOfferingsError {
         res: BufferedHttpResponse,
     ) -> RusotoError<GetReservedNodeExchangeOfferingsError> {
         {
-            let reader = EventReader::new(res.body.as_ref());
-            let mut stack = XmlResponse::new(reader.into_iter().peekable());
+            let mut stack = XmlResponse::new(res.body.as_ref());
             find_start_element(&mut stack);
             if let Ok(parsed_error) = Self::deserialize(&mut stack) {
                 match &parsed_error.code[..] {
@@ -16631,8 +16563,7 @@ pub enum ModifyClusterError {
 impl ModifyClusterError {
     pub fn from_response(res: BufferedHttpResponse) -> RusotoError<ModifyClusterError> {
         {
-            let reader = EventReader::new(res.body.as_ref());
-            let mut stack = XmlResponse::new(reader.into_iter().peekable());
+            let mut stack = XmlResponse::new(res.body.as_ref());
             find_start_element(&mut stack);
             if let Ok(parsed_error) = Self::deserialize(&mut stack) {
                 match &parsed_error.code[..] {
@@ -16819,8 +16750,7 @@ pub enum ModifyClusterDbRevisionError {
 impl ModifyClusterDbRevisionError {
     pub fn from_response(res: BufferedHttpResponse) -> RusotoError<ModifyClusterDbRevisionError> {
         {
-            let reader = EventReader::new(res.body.as_ref());
-            let mut stack = XmlResponse::new(reader.into_iter().peekable());
+            let mut stack = XmlResponse::new(res.body.as_ref());
             find_start_element(&mut stack);
             if let Ok(parsed_error) = Self::deserialize(&mut stack) {
                 match &parsed_error.code[..] {
@@ -16887,8 +16817,7 @@ pub enum ModifyClusterIamRolesError {
 impl ModifyClusterIamRolesError {
     pub fn from_response(res: BufferedHttpResponse) -> RusotoError<ModifyClusterIamRolesError> {
         {
-            let reader = EventReader::new(res.body.as_ref());
-            let mut stack = XmlResponse::new(reader.into_iter().peekable());
+            let mut stack = XmlResponse::new(res.body.as_ref());
             find_start_element(&mut stack);
             if let Ok(parsed_error) = Self::deserialize(&mut stack) {
                 match &parsed_error.code[..] {
@@ -16943,8 +16872,7 @@ pub enum ModifyClusterMaintenanceError {
 impl ModifyClusterMaintenanceError {
     pub fn from_response(res: BufferedHttpResponse) -> RusotoError<ModifyClusterMaintenanceError> {
         {
-            let reader = EventReader::new(res.body.as_ref());
-            let mut stack = XmlResponse::new(reader.into_iter().peekable());
+            let mut stack = XmlResponse::new(res.body.as_ref());
             find_start_element(&mut stack);
             if let Ok(parsed_error) = Self::deserialize(&mut stack) {
                 match &parsed_error.code[..] {
@@ -17005,8 +16933,7 @@ impl ModifyClusterParameterGroupError {
         res: BufferedHttpResponse,
     ) -> RusotoError<ModifyClusterParameterGroupError> {
         {
-            let reader = EventReader::new(res.body.as_ref());
-            let mut stack = XmlResponse::new(reader.into_iter().peekable());
+            let mut stack = XmlResponse::new(res.body.as_ref());
             find_start_element(&mut stack);
             if let Ok(parsed_error) = Self::deserialize(&mut stack) {
                 match &parsed_error.code[..] {
@@ -17065,8 +16992,7 @@ pub enum ModifyClusterSnapshotError {
 impl ModifyClusterSnapshotError {
     pub fn from_response(res: BufferedHttpResponse) -> RusotoError<ModifyClusterSnapshotError> {
         {
-            let reader = EventReader::new(res.body.as_ref());
-            let mut stack = XmlResponse::new(reader.into_iter().peekable());
+            let mut stack = XmlResponse::new(res.body.as_ref());
             find_start_element(&mut stack);
             if let Ok(parsed_error) = Self::deserialize(&mut stack) {
                 match &parsed_error.code[..] {
@@ -17139,8 +17065,7 @@ impl ModifyClusterSnapshotScheduleError {
         res: BufferedHttpResponse,
     ) -> RusotoError<ModifyClusterSnapshotScheduleError> {
         {
-            let reader = EventReader::new(res.body.as_ref());
-            let mut stack = XmlResponse::new(reader.into_iter().peekable());
+            let mut stack = XmlResponse::new(res.body.as_ref());
             find_start_element(&mut stack);
             if let Ok(parsed_error) = Self::deserialize(&mut stack) {
                 match &parsed_error.code[..] {
@@ -17196,8 +17121,7 @@ pub enum ModifyClusterSubnetGroupError {
 impl ModifyClusterSubnetGroupError {
     pub fn from_response(res: BufferedHttpResponse) -> RusotoError<ModifyClusterSubnetGroupError> {
         {
-            let reader = EventReader::new(res.body.as_ref());
-            let mut stack = XmlResponse::new(reader.into_iter().peekable());
+            let mut stack = XmlResponse::new(res.body.as_ref());
             find_start_element(&mut stack);
             if let Ok(parsed_error) = Self::deserialize(&mut stack) {
                 match &parsed_error.code[..] {
@@ -17302,8 +17226,7 @@ pub enum ModifyEventSubscriptionError {
 impl ModifyEventSubscriptionError {
     pub fn from_response(res: BufferedHttpResponse) -> RusotoError<ModifyEventSubscriptionError> {
         {
-            let reader = EventReader::new(res.body.as_ref());
-            let mut stack = XmlResponse::new(reader.into_iter().peekable());
+            let mut stack = XmlResponse::new(res.body.as_ref());
             find_start_element(&mut stack);
             if let Ok(parsed_error) = Self::deserialize(&mut stack) {
                 match &parsed_error.code[..] {
@@ -17432,8 +17355,7 @@ pub enum ModifyScheduledActionError {
 impl ModifyScheduledActionError {
     pub fn from_response(res: BufferedHttpResponse) -> RusotoError<ModifyScheduledActionError> {
         {
-            let reader = EventReader::new(res.body.as_ref());
-            let mut stack = XmlResponse::new(reader.into_iter().peekable());
+            let mut stack = XmlResponse::new(res.body.as_ref());
             find_start_element(&mut stack);
             if let Ok(parsed_error) = Self::deserialize(&mut stack) {
                 match &parsed_error.code[..] {
@@ -17522,8 +17444,7 @@ impl ModifySnapshotCopyRetentionPeriodError {
         res: BufferedHttpResponse,
     ) -> RusotoError<ModifySnapshotCopyRetentionPeriodError> {
         {
-            let reader = EventReader::new(res.body.as_ref());
-            let mut stack = XmlResponse::new(reader.into_iter().peekable());
+            let mut stack = XmlResponse::new(res.body.as_ref());
             find_start_element(&mut stack);
             if let Ok(parsed_error) = Self::deserialize(&mut stack) {
                 match &parsed_error.code[..] {
@@ -17614,8 +17535,7 @@ pub enum ModifySnapshotScheduleError {
 impl ModifySnapshotScheduleError {
     pub fn from_response(res: BufferedHttpResponse) -> RusotoError<ModifySnapshotScheduleError> {
         {
-            let reader = EventReader::new(res.body.as_ref());
-            let mut stack = XmlResponse::new(reader.into_iter().peekable());
+            let mut stack = XmlResponse::new(res.body.as_ref());
             find_start_element(&mut stack);
             if let Ok(parsed_error) = Self::deserialize(&mut stack) {
                 match &parsed_error.code[..] {
@@ -17682,8 +17602,7 @@ pub enum ModifyUsageLimitError {
 impl ModifyUsageLimitError {
     pub fn from_response(res: BufferedHttpResponse) -> RusotoError<ModifyUsageLimitError> {
         {
-            let reader = EventReader::new(res.body.as_ref());
-            let mut stack = XmlResponse::new(reader.into_iter().peekable());
+            let mut stack = XmlResponse::new(res.body.as_ref());
             find_start_element(&mut stack);
             if let Ok(parsed_error) = Self::deserialize(&mut stack) {
                 match &parsed_error.code[..] {
@@ -17740,8 +17659,7 @@ pub enum PauseClusterError {
 impl PauseClusterError {
     pub fn from_response(res: BufferedHttpResponse) -> RusotoError<PauseClusterError> {
         {
-            let reader = EventReader::new(res.body.as_ref());
-            let mut stack = XmlResponse::new(reader.into_iter().peekable());
+            let mut stack = XmlResponse::new(res.body.as_ref());
             find_start_element(&mut stack);
             if let Ok(parsed_error) = Self::deserialize(&mut stack) {
                 match &parsed_error.code[..] {
@@ -17798,8 +17716,7 @@ impl PurchaseReservedNodeOfferingError {
         res: BufferedHttpResponse,
     ) -> RusotoError<PurchaseReservedNodeOfferingError> {
         {
-            let reader = EventReader::new(res.body.as_ref());
-            let mut stack = XmlResponse::new(reader.into_iter().peekable());
+            let mut stack = XmlResponse::new(res.body.as_ref());
             find_start_element(&mut stack);
             if let Ok(parsed_error) = Self::deserialize(&mut stack) {
                 match &parsed_error.code[..] {
@@ -17878,8 +17795,7 @@ pub enum RebootClusterError {
 impl RebootClusterError {
     pub fn from_response(res: BufferedHttpResponse) -> RusotoError<RebootClusterError> {
         {
-            let reader = EventReader::new(res.body.as_ref());
-            let mut stack = XmlResponse::new(reader.into_iter().peekable());
+            let mut stack = XmlResponse::new(res.body.as_ref());
             find_start_element(&mut stack);
             if let Ok(parsed_error) = Self::deserialize(&mut stack) {
                 match &parsed_error.code[..] {
@@ -17932,8 +17848,7 @@ impl ResetClusterParameterGroupError {
         res: BufferedHttpResponse,
     ) -> RusotoError<ResetClusterParameterGroupError> {
         {
-            let reader = EventReader::new(res.body.as_ref());
-            let mut stack = XmlResponse::new(reader.into_iter().peekable());
+            let mut stack = XmlResponse::new(res.body.as_ref());
             find_start_element(&mut stack);
             if let Ok(parsed_error) = Self::deserialize(&mut stack) {
                 match &parsed_error.code[..] {
@@ -18006,8 +17921,7 @@ pub enum ResizeClusterError {
 impl ResizeClusterError {
     pub fn from_response(res: BufferedHttpResponse) -> RusotoError<ResizeClusterError> {
         {
-            let reader = EventReader::new(res.body.as_ref());
-            let mut stack = XmlResponse::new(reader.into_iter().peekable());
+            let mut stack = XmlResponse::new(res.body.as_ref());
             find_start_element(&mut stack);
             if let Ok(parsed_error) = Self::deserialize(&mut stack) {
                 match &parsed_error.code[..] {
@@ -18160,8 +18074,7 @@ impl RestoreFromClusterSnapshotError {
         res: BufferedHttpResponse,
     ) -> RusotoError<RestoreFromClusterSnapshotError> {
         {
-            let reader = EventReader::new(res.body.as_ref());
-            let mut stack = XmlResponse::new(reader.into_iter().peekable());
+            let mut stack = XmlResponse::new(res.body.as_ref());
             find_start_element(&mut stack);
             if let Ok(parsed_error) = Self::deserialize(&mut stack) {
                 match &parsed_error.code[..] {
@@ -18452,8 +18365,7 @@ impl RestoreTableFromClusterSnapshotError {
         res: BufferedHttpResponse,
     ) -> RusotoError<RestoreTableFromClusterSnapshotError> {
         {
-            let reader = EventReader::new(res.body.as_ref());
-            let mut stack = XmlResponse::new(reader.into_iter().peekable());
+            let mut stack = XmlResponse::new(res.body.as_ref());
             find_start_element(&mut stack);
             if let Ok(parsed_error) = Self::deserialize(&mut stack) {
                 match &parsed_error.code[..] {
@@ -18513,8 +18425,7 @@ pub enum ResumeClusterError {
 impl ResumeClusterError {
     pub fn from_response(res: BufferedHttpResponse) -> RusotoError<ResumeClusterError> {
         {
-            let reader = EventReader::new(res.body.as_ref());
-            let mut stack = XmlResponse::new(reader.into_iter().peekable());
+            let mut stack = XmlResponse::new(res.body.as_ref());
             find_start_element(&mut stack);
             if let Ok(parsed_error) = Self::deserialize(&mut stack) {
                 match &parsed_error.code[..] {
@@ -18569,8 +18480,7 @@ impl RevokeClusterSecurityGroupIngressError {
         res: BufferedHttpResponse,
     ) -> RusotoError<RevokeClusterSecurityGroupIngressError> {
         {
-            let reader = EventReader::new(res.body.as_ref());
-            let mut stack = XmlResponse::new(reader.into_iter().peekable());
+            let mut stack = XmlResponse::new(res.body.as_ref());
             find_start_element(&mut stack);
             if let Ok(parsed_error) = Self::deserialize(&mut stack) {
                 match &parsed_error.code[..] {
@@ -18620,8 +18530,7 @@ pub enum RevokeSnapshotAccessError {
 impl RevokeSnapshotAccessError {
     pub fn from_response(res: BufferedHttpResponse) -> RusotoError<RevokeSnapshotAccessError> {
         {
-            let reader = EventReader::new(res.body.as_ref());
-            let mut stack = XmlResponse::new(reader.into_iter().peekable());
+            let mut stack = XmlResponse::new(res.body.as_ref());
             find_start_element(&mut stack);
             if let Ok(parsed_error) = Self::deserialize(&mut stack) {
                 match &parsed_error.code[..] {
@@ -18692,8 +18601,7 @@ pub enum RotateEncryptionKeyError {
 impl RotateEncryptionKeyError {
     pub fn from_response(res: BufferedHttpResponse) -> RusotoError<RotateEncryptionKeyError> {
         {
-            let reader = EventReader::new(res.body.as_ref());
-            let mut stack = XmlResponse::new(reader.into_iter().peekable());
+            let mut stack = XmlResponse::new(res.body.as_ref());
             find_start_element(&mut stack);
             if let Ok(parsed_error) = Self::deserialize(&mut stack) {
                 match &parsed_error.code[..] {

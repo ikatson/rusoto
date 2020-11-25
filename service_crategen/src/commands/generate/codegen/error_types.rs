@@ -161,8 +161,7 @@ impl GenerateErrorTypes for XmlErrorTypes {
                 impl {type_name} {{
                     pub fn from_response(res: BufferedHttpResponse) -> RusotoError<{type_name}> {{
                         {{
-                            let reader = EventReader::new(res.body.as_ref());
-                            let mut stack = XmlResponse::new(reader.into_iter().peekable());
+                            let mut stack = XmlResponse::new(res.body.as_ref());
                             find_start_element(&mut stack);
                             if let Ok(parsed_error) = Self::deserialize(&mut stack) {{
                                 match &parsed_error.code[..] {{

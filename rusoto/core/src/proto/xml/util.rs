@@ -8,11 +8,10 @@ use std::io;
 use std::iter::Peekable;
 use std::num::ParseIntError;
 use xml;
-use xml::reader::{XmlEvent};
+use xml::reader::XmlEvent;
 use xml::writer::EventWriter;
 
 use crate::proto::xml::quick_xml_adapter::QEvents;
-use quick_xml::Reader;
 
 use crate::{error::RusotoError, request::HttpResponse};
 
@@ -45,8 +44,10 @@ pub struct XmlResponse<'b> {
 }
 
 impl<'b> XmlResponse<'b> {
-    pub fn new(stack: Peekable<QEvents<&'b [u8]>>) -> XmlResponse {
-        XmlResponse { xml_stack: stack }
+    pub fn new(buf: &'b [u8]) -> XmlResponse {
+        XmlResponse {
+            xml_stack: QEvents::from_reader(buf).into_iter().peekable(),
+        }
     }
 }
 
@@ -124,10 +125,7 @@ pub fn characters<T: Peek + Next>(stack: &mut T) -> Result<String, XmlParseError
         }
     }
     match stack.next() {
-        Some(Ok(XmlEvent::Characters(data))) |
-        Some(Ok(XmlEvent::CData(data))) => {
-            Ok(data)
-        },
+        Some(Ok(XmlEvent::Characters(data))) | Some(Ok(XmlEvent::CData(data))) => Ok(data),
         _ => Err(XmlParseError::new("Expected characters")),
     }
 }
@@ -272,8 +270,7 @@ where
     if xml_response.body.is_empty() {
         Ok(T::default())
     } else {
-        let events = QEvents::from_reader(Reader::from_reader(xml_response.body.as_ref()));
-        let mut stack = XmlResponse::new(events.into_iter().peekable());
+        let mut stack = XmlResponse::new(xml_response.body.as_ref());
         let _start_document = stack.next();
         let actual_tag_name = peek_at_name(&mut stack)?;
         Ok(deserialize(&actual_tag_name, &mut stack)?)
@@ -291,9 +288,7 @@ mod tests {
         let mut file = File::open("test_resources/list_queues_with_queue.xml").unwrap();
         let mut body = String::new();
         let _size = file.read_to_string(&mut body);
-        let events = QEvents::from_reader(Reader::from_reader(body.as_bytes()));
-        let my_stack = events.into_iter().peekable();
-        let mut reader = XmlResponse::new(my_stack);
+        let mut reader = XmlResponse::new(body.as_bytes());
 
         loop {
             reader.next();
@@ -313,9 +308,7 @@ mod tests {
         let mut file = File::open("test_resources/list_queues_with_queue.xml").unwrap();
         let mut body = String::new();
         let _size = file.read_to_string(&mut body);
-        let events = QEvents::from_reader(Reader::from_reader(body.as_bytes()));
-        let my_stack = events.into_iter().peekable();
-        let mut reader = XmlResponse::new(my_stack);
+        let mut reader = XmlResponse::new(body.as_bytes());
 
         // skip two leading fields since we ignore them (xml declaration, return type declaration)
         reader.next();
@@ -332,9 +325,7 @@ mod tests {
         let mut file = File::open("test_resources/list_queues_with_queue.xml").unwrap();
         let mut body = String::new();
         let _size = file.read_to_string(&mut body);
-        let events = QEvents::from_reader(Reader::from_reader(body.as_bytes()));
-        let my_stack = events.into_iter().peekable();
-        let mut reader = XmlResponse::new(my_stack);
+        let mut reader = XmlResponse::new(body.as_bytes());
 
         // skip two leading fields since we ignore them (xml declaration, return type declaration)
         reader.next();
@@ -355,9 +346,7 @@ mod tests {
         let mut file = File::open("test_resources/list_queues_with_queue.xml").unwrap();
         let mut body = String::new();
         let _size = file.read_to_string(&mut body);
-        let events = QEvents::from_reader(Reader::from_reader(body.as_bytes()));
-        let my_stack = events.into_iter().peekable();
-        let mut reader = XmlResponse::new(my_stack);
+        let mut reader = XmlResponse::new(body.as_bytes());
 
         // skip two leading fields since we ignore them (xml declaration, return type declaration)
         reader.next();
@@ -379,9 +368,7 @@ mod tests {
     #[test]
     fn test_find_start_element() {
         let body = include_bytes!("../../../test_resources/list_queues_with_queue.xml");
-        let parser = QEvents::from_reader(Reader::from_reader(&body[..]));
-        let stack = parser.into_iter().peekable();
-        let mut reader = XmlResponse::new(stack);
+        let mut reader = XmlResponse::new(&body[..]);
 
         // skip first two elements
         find_start_element(&mut reader);

@@ -1089,8 +1089,7 @@ pub enum AssumeRoleError {
 impl AssumeRoleError {
     pub fn from_response(res: BufferedHttpResponse) -> RusotoError<AssumeRoleError> {
         {
-            let reader = EventReader::new(res.body.as_ref());
-            let mut stack = XmlResponse::new(reader.into_iter().peekable());
+            let mut stack = XmlResponse::new(res.body.as_ref());
             find_start_element(&mut stack);
             if let Ok(parsed_error) = Self::deserialize(&mut stack) {
                 match &parsed_error.code[..] {
@@ -1155,8 +1154,7 @@ pub enum AssumeRoleWithSAMLError {
 impl AssumeRoleWithSAMLError {
     pub fn from_response(res: BufferedHttpResponse) -> RusotoError<AssumeRoleWithSAMLError> {
         {
-            let reader = EventReader::new(res.body.as_ref());
-            let mut stack = XmlResponse::new(reader.into_iter().peekable());
+            let mut stack = XmlResponse::new(res.body.as_ref());
             find_start_element(&mut stack);
             if let Ok(parsed_error) = Self::deserialize(&mut stack) {
                 match &parsed_error.code[..] {
@@ -1241,8 +1239,7 @@ pub enum AssumeRoleWithWebIdentityError {
 impl AssumeRoleWithWebIdentityError {
     pub fn from_response(res: BufferedHttpResponse) -> RusotoError<AssumeRoleWithWebIdentityError> {
         {
-            let reader = EventReader::new(res.body.as_ref());
-            let mut stack = XmlResponse::new(reader.into_iter().peekable());
+            let mut stack = XmlResponse::new(res.body.as_ref());
             find_start_element(&mut stack);
             if let Ok(parsed_error) = Self::deserialize(&mut stack) {
                 match &parsed_error.code[..] {
@@ -1339,8 +1336,7 @@ impl DecodeAuthorizationMessageError {
         res: BufferedHttpResponse,
     ) -> RusotoError<DecodeAuthorizationMessageError> {
         {
-            let reader = EventReader::new(res.body.as_ref());
-            let mut stack = XmlResponse::new(reader.into_iter().peekable());
+            let mut stack = XmlResponse::new(res.body.as_ref());
             find_start_element(&mut stack);
             if let Ok(parsed_error) = Self::deserialize(&mut stack) {
                 match &parsed_error.code[..] {
@@ -1384,8 +1380,7 @@ pub enum GetAccessKeyInfoError {}
 impl GetAccessKeyInfoError {
     pub fn from_response(res: BufferedHttpResponse) -> RusotoError<GetAccessKeyInfoError> {
         {
-            let reader = EventReader::new(res.body.as_ref());
-            let mut stack = XmlResponse::new(reader.into_iter().peekable());
+            let mut stack = XmlResponse::new(res.body.as_ref());
             find_start_element(&mut stack);
             if let Ok(parsed_error) = Self::deserialize(&mut stack) {
                 match &parsed_error.code[..] {
@@ -1418,8 +1413,7 @@ pub enum GetCallerIdentityError {}
 impl GetCallerIdentityError {
     pub fn from_response(res: BufferedHttpResponse) -> RusotoError<GetCallerIdentityError> {
         {
-            let reader = EventReader::new(res.body.as_ref());
-            let mut stack = XmlResponse::new(reader.into_iter().peekable());
+            let mut stack = XmlResponse::new(res.body.as_ref());
             find_start_element(&mut stack);
             if let Ok(parsed_error) = Self::deserialize(&mut stack) {
                 match &parsed_error.code[..] {
@@ -1459,8 +1453,7 @@ pub enum GetFederationTokenError {
 impl GetFederationTokenError {
     pub fn from_response(res: BufferedHttpResponse) -> RusotoError<GetFederationTokenError> {
         {
-            let reader = EventReader::new(res.body.as_ref());
-            let mut stack = XmlResponse::new(reader.into_iter().peekable());
+            let mut stack = XmlResponse::new(res.body.as_ref());
             find_start_element(&mut stack);
             if let Ok(parsed_error) = Self::deserialize(&mut stack) {
                 match &parsed_error.code[..] {
@@ -1515,8 +1508,7 @@ pub enum GetSessionTokenError {
 impl GetSessionTokenError {
     pub fn from_response(res: BufferedHttpResponse) -> RusotoError<GetSessionTokenError> {
         {
-            let reader = EventReader::new(res.body.as_ref());
-            let mut stack = XmlResponse::new(reader.into_iter().peekable());
+            let mut stack = XmlResponse::new(res.body.as_ref());
             find_start_element(&mut stack);
             if let Ok(parsed_error) = Self::deserialize(&mut stack) {
                 match &parsed_error.code[..] {
