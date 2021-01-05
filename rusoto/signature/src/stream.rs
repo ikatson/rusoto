@@ -101,23 +101,25 @@ impl AsyncRead for ImplAsyncRead {
     fn poll_read(
         self: Pin<&mut Self>,
         cx: &mut Context<'_>,
-        buf: &mut [u8],
-    ) -> Poll<io::Result<usize>> {
+        buf: &mut tokio::io::ReadBuf<'_>,
+    ) -> Poll<io::Result<()>> {
         let this = self.project();
         if this.buffer.is_empty() {
             match futures::ready!(this.stream.poll_next(cx)) {
-                None => return Poll::Ready(Ok(0)),
+                None => return Poll::Ready(Ok(())),
                 Some(Err(e)) => return Poll::Ready(Err(e)),
                 Some(Ok(bytes)) => {
                     this.buffer.put(bytes);
                 }
             }
         }
-        let available = std::cmp::min(buf.len(), this.buffer.len());
+        let initialized = buf.initialize_unfilled();
+        let available = std::cmp::min(initialized.len(), this.buffer.len());
         let bytes = this.buffer.split_to(available);
-        let (left, _) = buf.split_at_mut(available);
+        let (left, _) = initialized.split_at_mut(available);
         left.copy_from_slice(&bytes[..available]);
-        Poll::Ready(Ok(available))
+        buf.advance(available);
+        Poll::Ready(Ok(()))
     }
 }
 
@@ -138,9 +140,13 @@ impl ImplBlockingRead {
 
 impl io::Read for ImplBlockingRead {
     fn read(&mut self, buf: &mut [u8]) -> io::Result<usize> {
-        let mut rt = tokio::runtime::Runtime::new()?;
+        let rt = tokio::runtime::Runtime::new()?;
         rt.block_on(future::poll_fn(|cx| {
-            tokio::io::AsyncRead::poll_read(Pin::new(&mut self.inner), cx, buf)
+            let mut buf = tokio::io::ReadBuf::new(buf);
+            match tokio::io::AsyncRead::poll_read(Pin::new(&mut self.inner), cx, &mut buf) {
+                Poll::Ready(v) => Poll::Ready(v.map(|_| buf.filled().len())),
+                Poll::Pending => Poll::Pending
+            }
         }))
     }
 }
