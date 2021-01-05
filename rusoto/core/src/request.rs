@@ -273,6 +273,18 @@ where
     }
 
     /// Allows for a custom connector to be used with the HttpClient
+    pub fn from_connector_with_executor<E>(connector: C, executor: E) -> Self
+        where E: hyper::rt::Executor<Pin<Box<dyn Future<Output = ()> + Send>>> + Send + Sync + 'static
+    {
+        let inner = HyperClient::builder().executor(executor).build(connector);
+        HttpClient {
+            inner,
+            local_agent_prepend: None,
+            local_agent_append: None,
+        }
+    }
+
+    /// Allows for a custom connector to be used with the HttpClient
     /// with extra configuration options
     pub fn from_connector_with_config(connector: C, config: HttpConfig) -> Self {
         let mut builder = HyperClient::builder();
